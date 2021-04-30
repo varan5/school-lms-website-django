@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'register' %}">Register</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'user_logout' %}">Logout</a> 
+            {% else %}
+                <a href="{% url 'user_login' %}">Login</a>
+            {% endif %}
+
+            <a href="{% url 'admin:index' %}">Admin</a>
+            <a href="{% url 'curriculum:standard_list' %}">Standards</a>
+
+            <h1>This is the Home Page</h1>
+            {% block content %}
+            {% endblock %}
+        </div>   
+    </div>
+</body>
+</html>

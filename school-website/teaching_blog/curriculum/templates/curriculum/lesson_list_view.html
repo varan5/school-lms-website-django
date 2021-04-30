@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for lesson in subjects.lessons.all %}
+        <a href="#">{{ lesson.position}}: {{lesson.name}}</a><br><br> 
+    {% endfor %}
+{% endblock %}
